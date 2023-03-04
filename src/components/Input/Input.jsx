@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext, useState} from "react";
+import { FormContext } from "../../context/ContextoFormulario";
 
 const Input = ({ name, label, type = "text" }) => {
   // Aqui deberíamos acceder al estado global para poder obtener los datos
@@ -6,8 +7,13 @@ const Input = ({ name, label, type = "text" }) => {
 
   // También, utilizaremos un estado local para manejar el estado del input.
 
+  const [value, setValue] = useState("");
+
+  const {formValues, setFormValues} = useContext(FormContext);
+
   const onChange = (e) => {
     // Aquí deberíamos actualizar el estado local del input.
+    setValue(e.target.value);
   };
 
   const onBlur = (e) => {
@@ -17,6 +23,8 @@ const Input = ({ name, label, type = "text" }) => {
     // cada input.
     // TIP: Podemos utilizar el nombre de cada input para guardar
     // los datos en el estado global usando una notación de { clave: valor }
+
+    setFormValues({ ...formValues, [e.target.id]: e.target.value });
   };
 
   return (
@@ -24,7 +32,7 @@ const Input = ({ name, label, type = "text" }) => {
       <label htmlFor={name}>{label}</label>
       <input
         type={type}
-        value={"Siempre tengo el mismo valor XD"}
+        value={value}
         id={name}
         onChange={onChange}
         onBlur={onBlur}
