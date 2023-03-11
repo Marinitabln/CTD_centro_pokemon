@@ -90,9 +90,9 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
+  /*height: 100%;*/
   padding-bottom: 3rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .input-contenedor {
@@ -120,6 +120,7 @@ h1 {
 .formulario-ingreso h3 {
   width: 100%;
   padding: 1rem;
+  margin: 0;
 }
 
 .detalle-formulario {
