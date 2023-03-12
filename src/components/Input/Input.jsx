@@ -1,23 +1,31 @@
+
 import React, { useContext, useState } from "react";
 import { FormContext } from "../../context/ContextoFormulario";
 
 const Input = ({ name, label, type = "text", rol }) => {
-
   const [value, setValue] = useState("");
   const [store, dispatch] = useContext(FormContext);
 
-  //const {formValues, setFormValues} = useContext(FormContext); SIN REDUCER
-
+  /**
+   * @description funcion para actualizar el estado local del input
+   * @param {InputEvent} e
+   */
   const onChange = (e) => {
     setValue(e.target.value);
   };
 
+  
+  /**
+   *@description funcion que se ejecuta cuando el input pierde el foco, enviando el valor del input al
+   * contexto que el luego utilizado por el componente Detalle.
+   * @param {InputEvent} e
+   */
   const onBlur = (e) => {
     e.preventDefault();
-
-    //setFormValues({ ...formValues, [e.target.id]: e.target.value }); SIN REDUCER
-
-    dispatch({ type: `ACTUALIZAR_${rol}`, payload: { [e.target.name]: value } });
+    dispatch({
+      type: `ACTUALIZAR_${rol}`,
+      payload: { [e.target.name]: value },
+    });
   };
 
   return (

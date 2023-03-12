@@ -3,9 +3,7 @@ import { FormContext } from "../../context/ContextoFormulario";
 
 const Detalle = () => {
    
-  //const {formValues} = useContext(FormContext); SIN REDUCER
-
-  const [store, dispatch] = useContext(FormContext);
+ const [store, dispatch] = useContext(FormContext);
 
   return (
     <div className="detalle-formulario">
