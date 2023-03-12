@@ -1,5 +1,6 @@
 import { createContext, useReducer} from "react";
 import { formReducer, initialState } from "../components/hooks/formReducer";
+import PropTypes from "prop-types";
 
 export const FormContext = createContext();
 
@@ -16,3 +17,6 @@ export const FormProvider = ({ children }) => {
   return <FormContext.Provider value={[store, dispatch]}>{children}</FormContext.Provider>;
 };
 
+FormProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};

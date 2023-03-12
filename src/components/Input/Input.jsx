@@ -1,6 +1,7 @@
 
 import React, { useContext, useState } from "react";
 import { FormContext } from "../../context/ContextoFormulario";
+import PropTypes from "prop-types";
 
 const Input = ({ name, label, type = "text", rol }) => {
   const [value, setValue] = useState("");
@@ -43,3 +44,10 @@ const Input = ({ name, label, type = "text", rol }) => {
 };
 
 export default Input;
+
+Input.propTypes = {
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  rol: PropTypes.string.isRequired,
+};
