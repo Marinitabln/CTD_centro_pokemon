@@ -8,7 +8,7 @@ const Input = ({ name, label, type = "text", rol }) => {
   const [store, dispatch] = useContext(FormContext);
 
   /**
-   * @description funcion para actualizar el estado local del input
+   * @description funcion que actualiza el estado local del input
    * @param {InputEvent} e
    */
   const onChange = (e) => {
@@ -17,8 +17,7 @@ const Input = ({ name, label, type = "text", rol }) => {
 
   
   /**
-   *@description funcion que se ejecuta cuando el input pierde el foco, enviando el valor del input al
-   * contexto que el luego utilizado por el componente Detalle.
+   *@description funcion que se ejecuta cuando se saca el foco sobre el input: envía valor al contexto y es consumido por el componente Detalle
    * @param {InputEvent} e
    */
   const onBlur = (e) => {

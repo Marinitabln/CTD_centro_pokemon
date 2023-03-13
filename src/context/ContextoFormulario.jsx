@@ -19,4 +19,5 @@ export const FormProvider = ({ children }) => {
 
 FormProvider.propTypes = {
   children: PropTypes.node.isRequired,
+  //children: PropTypes.element.isRequired, OTRA OPCIÓN
 };

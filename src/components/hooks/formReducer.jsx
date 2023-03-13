@@ -5,6 +5,12 @@
  */
 
 /**
+ * @typedef {object} accion
+ * @property {string} type
+ * @property {object} payload
+ */
+
+/**
  * @typedef {object} entrenador
  * @property {string} nombre
  * @property {string} apellido
@@ -21,11 +27,6 @@
  * @property {string} especiePokemon
  */
 
-/**
- * @typedef {object} accion
- * @property {string} type
- * @property {object} payload
- */
 
 export const initialState = {
   /**
